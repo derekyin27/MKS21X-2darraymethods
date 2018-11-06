@@ -47,5 +47,13 @@ public class ArrayMethods{
     }
     return true;
   }
-  public static boolean isColumnMagic(int[][] ary)
+  public static boolean isColumnMagic(int[][] ary){
+    int[] Sums = new allColSums(ary);
+    for (int i = 0; i < ary.length; i++){
+      if (Sums[i] != Sums[0]){
+        return false;
+      }
+    }
+    return true;
+  }
 }
