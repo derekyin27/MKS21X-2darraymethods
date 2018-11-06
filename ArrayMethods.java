@@ -2,9 +2,12 @@ public class ArrayMethods{
   public static int rowSum(int [][] ary, int x){
     int c = 0;
     if (x > ary.length){
-      return sum;
+      return c;
     }
-    for (int i = 0; i<ary[x].length, i++){
+    if (x < 0){
+      throw new IndexOutofBoundsException();
+    }
+    for (int i = 0; i<ary[x].length; i++){
       c+=ary[x][i];
     }
     return c;
@@ -13,7 +16,7 @@ public class ArrayMethods{
     int c = 0;
     for (int i = 0; i < ary.length; i++){
       if (x < ary[i].length){
-        c+=ary.[i][x];
+        c+=ary[i][x];
       }
     }
     return c;
@@ -31,15 +34,15 @@ public class ArrayMethods{
       if (ary[i].length > x){
         x = ary[i].length;
       }
-      int[] Sums = new int[x];
     }
+    int[] Sums = new int[x];
     for (int i = 0; i < x; i++){
       Sums[i] = columnSum(ary, i);
     }
     return Sums;
   }
   public static boolean isRowMagic(int[][] ary){
-    int[] Sums = new allRowSums(ary);
+    int[] Sums = allRowSums(ary);
     for (int i = 0; i < ary.length; i++){
       if (Sums[i] != Sums[0]){
         return false;
@@ -48,7 +51,7 @@ public class ArrayMethods{
     return true;
   }
   public static boolean isColumnMagic(int[][] ary){
-    int[] Sums = new allColSums(ary);
+    int[] Sums = allColSums(ary);
     for (int i = 0; i < ary.length; i++){
       if (Sums[i] != Sums[0]){
         return false;
