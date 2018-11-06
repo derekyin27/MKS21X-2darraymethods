@@ -4,9 +4,6 @@ public class ArrayMethods{
     if (x > ary.length){
       return c;
     }
-    if (x < 0){
-      throw new IndexOutofBoundsException();
-    }
     for (int i = 0; i<ary[x].length; i++){
       c+=ary[x][i];
     }
