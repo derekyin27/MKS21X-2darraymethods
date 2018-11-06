@@ -18,7 +18,7 @@ public class ArrayMethods{
     }
     return c;
   }
-  public static int[] allRowSums(int [][] ary){
+  public static int[] allRowSums(int[][] ary){
     int[] Sums = new int[ary.length];
     for (int i = 0; i < ary.length; i++){
       Sums[i] = rowSum(ary, i);
@@ -38,7 +38,14 @@ public class ArrayMethods{
     }
     return Sums;
   }
-  public static boolean isRowMagic(int [][] ary){
-    
+  public static boolean isRowMagic(int[][] ary){
+    int[] Sums = new allRowSums(ary);
+    for (int i = 0; i < ary.length; i++){
+      if (Sums[i] != Sums[0]){
+        return false;
+      }
+    }
+    return true;
   }
+  public static boolean isColumnMagic(int[][] ary)
 }
